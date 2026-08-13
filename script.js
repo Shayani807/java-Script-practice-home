@@ -1,54 +1,32 @@
 // --------------------------------
-// ------Arithmetic Operators------
+// ------Assignment Operators------
 // --------------------------------
 
-// --Single Operators--
-var myAge, yourAge, year, result;
-myAge = 26;
-yourAge = 20;
-year = 2021;
+// Equal
+var myName = 'Kasun';
+console.log(myName);
 
-// Substraction
-result = year - myAge;
-console.log('I was born in '+result);
+// Addition with equal
+var age = 24;
+age += 10; // age = age + 10
+console.log(age);
 
-// Addition
-result = year + 10;
-console.log('After 10 years, It will be '+result);
+// Substraction with equal
+age -= 10;
+console.log(age);
 
-// Multiplication
-result = myAge * yourAge;
-console.log('Product of our ages '+result);
+// Multiplication with equal
+age *= 10;
+console.log(age);
 
-// Division
-console.log('Division of our ages '+(myAge/yourAge));
+// Division with equal
+age /= 4;
+console.log(age);
 
-// Modulus
-console.log('Modulus of our ages '+(myAge%yourAge));
+// Modulus with equal
+age %= 13;
+console.log(age);
 
-// Exponentiation
-console.log('Exponent of my age '+(myAge**2));
-
-// Increment
-console.log(myAge++);
-console.log('Post Increment of my age '+myAge);
-
-console.log(++myAge);
-console.log('Pre Increment of my age '+myAge);
-
-// Decrement
-console.log(myAge--);
-console.log('Post Decrement of my age '+myAge);
-
-console.log(--myAge);
-console.log('Pre Decrement of my age '+myAge);
-
-
-// --Operator Precedence--
-var cal = (20+30)/10+4.5-2*4**2;
-console.log(cal);
-
-// --Multiple Operators--
-var ans1, ans2;
-ans1 = ans2 = (((30+40-29)*2)/8)**4; // Assignment operator | right to left
-console.log(ans1+' | '+ans2);
+// Exponentiation with equal
+age **= 2;
+console.log(age);
