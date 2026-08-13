@@ -1,32 +1,31 @@
 // --------------------------------
-// ------Assignment Operators------
+// ---------BMI Comparison---------
 // --------------------------------
 
-// Equal
-var myName = 'Kasun';
-console.log(myName);
+/*
+Kasun and Chamal are trying to compare their BMI (Body Mass Index), which is calculated using the formula: 
+BMI = mass / height ^ 2
+(Mass is kg and Height in meter)
 
-// Addition with equal
-var age = 24;
-age += 10; // age = age + 10
-console.log(age);
+1. Store Kasun's and Chamal's mass and height in variables
+2. Calculate both their BMIs
+3. Create a boolean variable containing information about whether Kasun has a higher BMI than Chamal.
+4. Print a string to in alert box containing the variable from step 3.
+*/
 
-// Substraction with equal
-age -= 10;
-console.log(age);
+var mass, height, bmik, bmic, isKasun;
 
-// Multiplication with equal
-age *= 10;
-console.log(age);
+// Kasun's BMI
+mass = prompt("Kasun's mass : ");
+height = prompt("Kasun's height : ");
+bmik = mass / (height * height);
 
-// Division with equal
-age /= 4;
-console.log(age);
+// Chamal's BMI
+mass = prompt("Chamal's mass : ");
+height = prompt("Chamal's height : ");
+bmic = mass / (height * height);
 
-// Modulus with equal
-age %= 13;
-console.log(age);
+// Boolean
+isKasun = (bmik > bmic);
 
-// Exponentiation with equal
-age **= 2;
-console.log(age);
+alert(isKasun);
