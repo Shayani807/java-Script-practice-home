@@ -1,122 +1,54 @@
 // --------------------------------
-// --------- Variables ------------
+// ------Arithmetic Operators------
 // --------------------------------
 
+// --Single Operators--
+var myAge, yourAge, year, result;
+myAge = 26;
+yourAge = 20;
+year = 2021;
 
-// -- Primitive Data Types --
+// Substraction
+result = year - myAge;
+console.log('I was born in '+result);
 
-/*
-   Number   - Floating point numbers, for decimals and integers
-   String   - Sequence of characters, used for text
-   Boolean  - Logical data type that can only be true or false
-   Undefined - Data type of a variable that does not have a value yet
-   Null     - Non-existent
-*/
+// Addition
+result = year + 10;
+console.log('After 10 years, It will be '+result);
 
+// Multiplication
+result = myAge * yourAge;
+console.log('Product of our ages '+result);
 
-// You only can start a variable name with a letter,
-// underscore or dollar sign.
-// And can't use any reserved keywords as variable names.
+// Division
+console.log('Division of our ages '+(myAge/yourAge));
 
+// Modulus
+console.log('Modulus of our ages '+(myAge%yourAge));
 
+// Exponentiation
+console.log('Exponent of my age '+(myAge**2));
 
-// --------------------------------
-// Create Variables
-// --------------------------------
+// Increment
+console.log(myAge++);
+console.log('Post Increment of my age '+myAge);
 
-var firstName = 'Chamara';
-var lastName = 'Perera';
-var age = 26;
-var isOk = true;
-var job, height;
+console.log(++myAge);
+console.log('Pre Increment of my age '+myAge);
 
+// Decrement
+console.log(myAge--);
+console.log('Post Decrement of my age '+myAge);
 
-
-// --------------------------------
-// Print Only Variable
-// --------------------------------
-
-console.log(firstName);
-
-
-
-// --------------------------------
-// Print Variable With a String
-// --------------------------------
-
-console.log('My name is ' + lastName);
+console.log(--myAge);
+console.log('Pre Decrement of my age '+myAge);
 
 
+// --Operator Precedence--
+var cal = (20+30)/10+4.5-2*4**2;
+console.log(cal);
 
-// --------------------------------
-// Type Coercion
-// --------------------------------
-
-console.log('My age is ' + age);
-
-console.log('It is ' + isOk);
-
-console.log('I am a ' + job);
-
-
-
-// --------------------------------
-// Get Variable Type
-// --------------------------------
-
-console.log(typeof(lastName));
-
-console.log(typeof(age));
-
-console.log(typeof(isOk));
-
-console.log(typeof(job));
-
-
-
-// --------------------------------
-// Define Variable
-// --------------------------------
-
-job = 'Doctor';
-
-
-
-// --------------------------------
-// Variable Mutation
-// --------------------------------
-
-lastName = 'Fernando';
-
-console.log(
-    'I am ' + lastName +
-    ' I am a ' + job
-);
-
-
-
-// --------------------------------
-// Display an Alert
-// --------------------------------
-
-alert(
-    'My name is ' + lastName +
-    '. I am ' + age +
-    ' years old.' +
-    ' And am I ok? ' + isOk + '.'
-);
-
-
-
-// --------------------------------
-// Get User Input
-// --------------------------------
-
-height = prompt('What is your height?');
-
-
-
-alert(
-    'My height is ' + height +
-    ' feet.'
-);
+// --Multiple Operators--
+var ans1, ans2;
+ans1 = ans2 = (((30+40-29)*2)/8)**4; // Assignment operator | right to left
+console.log(ans1+' | '+ans2);
