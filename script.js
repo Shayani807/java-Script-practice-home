@@ -1,83 +1,46 @@
-// --------------------
-// --------Loops-------
-// --------------------
+// -----------------------------
+// --------Error Handling-------
+// -----------------------------
 
+// --Try Catch--
 /*
-    loops are control structure that repeatedly run a block of code until a certain condition get false.
+    try - Let you test a block of code for errors
+    catch - Lets you handle the error
+    throw -  lets you create custom errors
+    finally - lets you execute code, after try and catch, regardless of the result
 */
 
-// --Whithout Loops--
-console.log(1);
-console.log(2);
-console.log(3);
-
-// --For Loop--
-for(var i=0; i<10; i++){ // i += 1 => i = i + 1
-    console.log(i);
-}
-/*
-    i = 0, 0 < 10 true, log i to the console, i++
-    i = 1, 1 < 10 true, log i to the console, i++
-    ...
-    i = 9, 9 < 10 true, log i to the console, i++
-    i = 10, 10 < 10 false, exit the loop
-*/
-
-for(var i=10; i>0; i--){
-    console.log(i);
-}
-
-// Iterate an array
-var students = ['Namal','Kumara','Dasun','Sachini','John'];
-for(var i = 0; i < students.length; i++){
-    console.log(students[i]);
-}
-
-// --For/In Loop--
-// The JavaScript for/in statement loops through the properties of an object
-var person = {fname:"Chamara", lname:"Silva", age:25};
-var i;
-for(i in person){
-    console.log(person[i]);
+// Function to find the largest number
+function findLargest(a, b, c){
+    try{
+        if(typeof(a) !== 'number' || typeof(b) !== 'number' || typeof(c) !== 'number'){
+            throw "Error : Enter only numbers!";
+        }
+        else if(a == b || a == c || b == c){
+            throw "Error : Enter different numbers!";
+        }
+        else{
+            if(a > b && a > c){
+                console.log("a is the largest number!");
+            }
+            else if(b > a && b > c){
+                console.log("b is the largest number!");
+            }
+            else if(c > a && c > b){
+                console.log("c is the largest number!");
+            }
+            else{
+                console.log("Invalid inputs!");
+            }
+        }
+    }
+    catch(err){
+        console.log(err);
+    }
+    finally{
+        console.log("Input values are "+a+", "+b+" and "+c);
+    }
 }
 
-// --For/Of Loop--
-// For/of lets you loop over data structures that are iterable such as Arrays, Strings, Maps, NodeLists, and more.
-var fullName = 'Chamara Perera';
-var j;
-for(j of fullName){
-    console.log(j);
-}
-
-// --While Loop--
-var marks = [33,55,66,88,22];
-var k = 0;
-while(k < marks.length){
-    console.log(marks[k]);
-    k++;
-}
-
-// --Do-While Loop--
-var l = 10;
-do{
-    console.log(l);
-    l--;
-}while(l >= 1);
-
-// --Continue & Break--
-// The break and the continue statements are the only JavaScript statements that can "jump out of" a code block.
-var data = ['Saman','Galle',1996,'Maths',true,'Chocolate'];
-
-// Continue
-// If a specified condition occurs, and continues with the next iteration in the loop.
-for(var i = 0; i < data.length; i++){
-    if(typeof(data[i]) !== 'string') continue;
-    console.log(data[i]);
-}
-
-// Break
-// Breaks the loop and continues executing the code after the loop (if any)
-for(var i = 0; i < data.length; i++){
-    if(typeof(data[i]) !== 'string') break;
-    console.log(data[i]);
-}
+// Calling
+findLargest(7,7,5);
