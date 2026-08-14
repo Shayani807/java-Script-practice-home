@@ -1,71 +1,49 @@
-// ----------------------
-// --------Objects-------
-// ----------------------
+// -------------------------------
+// --------BMI with Objects-------
+// -------------------------------
 
 /*
-    In Javascript objects are variables that has many values.
-    Those values written as name:value pairs called properties or methods.
+    Let's remember the first coding challenge where Kasun and Chamal compared their BMIs. Let's now implement the same functionality with objects and methods.
+    1. For each of them, create an object with full name, mass and height.
+    2. Then, add a method to each object to calculate the BMI. Save the BMI to the object and also return it from the method.
+    3. In the end, display the highest BMI with the full name. Don't forget they might have the same BMI.
+
+    BMI = mass / height ^ 2
 */
 
-// --Object Literals--
-// Comma-separated list of name-value pairs wrapped in curly braces.
-var nimal = {
-    firstName: 'Nimal',
-    lastName: 'Perera',
-    age: 24,
-    isMarried: false,
-    job: 'Developer',
-    subjects: ['Java Programming', 'Web Development', 'Graphic Design', 'Database Management'],
-    degree: {
-        name: 'Software Eng.',
-        duration: '4 years',
-        credits: 120
-    },
-    projects: [
-        {
-            name: 'Ecomerce App',
-            technology: 'Flutter',
-            version: 1.1
-        },
-        {
-            name: 'Music Player',
-            technology: 'Java',
-            version: 1.2
-        },
-        {
-            name: 'POS',
-            technology: 'C#',
-            version: 2.0
-        }
-    ],
-    yearOfBirth: function(year){
-        return year-this.age;
-    }
+// Declare objects
+var kasun = new Object();
+var chamal = new Object();
+
+// Add properties to Kasun
+kasun.fullName = prompt("Enter Kasun's full name : ");
+kasun.mass = prompt("Enter Kasun's mass : ");
+kasun.height = prompt("Enter Kasun's height : ");
+
+// Add properties to Chamal
+chamal.fullName = prompt("Enter Chamal,s full name : ");
+chamal.mass = prompt("Enter Chamal,s mass : ");
+chamal.height = prompt("Enter Chamal,s height : ");
+
+// Add bmi() method for both
+kasun.bmi = chamal.bmi = function(){
+    this.bmiVal = this.mass / (this.height**2);
+    return this.bmiVal;
 }
 
-// Get values
-console.log(nimal);
-console.log(nimal.firstName);
-console.log(nimal['lastName']);
-var x = 'age';
-console.log(nimal[x]);
-console.log(nimal.subjects[2]);
-console.log(nimal['subjects'][3]);
-console.log(nimal.degree.name);
-console.log(nimal['degree'].credits);
-console.log(nimal.projects[1].technology);
-console.log('Year of Birth : '+nimal.yearOfBirth(2021));
+console.log(kasun);
+console.log(chamal);
 
-// Modify values
-nimal.job = 'Engineer';
-nimal['isMarried'] = true;
-console.log(nimal);
-
-// --new Object syntax--
-var kasun = new Object();
-// Add Properties
-kasun.firstName = 'Kasun';
-kasun.lastName = 'Fernando';
-kasun['age'] = 30;
+// Find the highest BMI
+if(kasun.bmi() > chamal.bmi()){
+    alert(kasun.fullName+" has the highest BMI "+kasun.bmiVal);
+}
+else if(kasun.bmi() < chamal.bmi()){
+    alert(chamal.fullName+" has the highest BMI "+chamal.bmiVal);
+}
+else{
+    alert("Both BMIs are equal!");
+}
 
 console.log(kasun);
+console.log(chamal);
