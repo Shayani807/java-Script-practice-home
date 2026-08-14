@@ -1,41 +1,50 @@
-// ---------------------------
-// --------Winning Team-------
-// ---------------------------
+// ----------------------------------------------
+// -----------Introduction of Functions----------
+// ----------------------------------------------
 
 /*
-    Sri Lanka & England both played 3 match one day cricket series. In last 3 games Sri Lanka scored 250, 277, 300 runs, while England scored 185, 244, 360 runs.
-
-    1. Calculate the average score for each team
-    2. Decide which teams wins in average (highest average score), and display the winner with the average score
-    3. Then change scores to show different winners. Don't forget to take into account there might be a draw (same average score)
+    Funtion is a re-usable peace of code that does a specific thing.
 */
 
-var score1, score2, score3, averageSri, averageEng;
+// --Define functions--
 
-// Sri Lanka average
-score1 = parseInt(prompt("First match score of team Sri Lanka : "));
-score2 = parseInt(prompt("Second match score of team Sri Lanka : "));
-score3 = parseInt(prompt("Third match score of team Sri Lanka : "));
-
-averageSri = (score1+score2+score3)/3;
-
-// England average
-score1 = parseInt(prompt("First match score of team England : "));
-score2 = parseInt(prompt("Second match score of team England : "));
-score3 = parseInt(prompt("Third match score of team England : "));
-
-averageEng = (score1+score2+score3)/3;
-
-// Find the winner
-if(averageSri > averageEng){
-    alert("Winner is team Sri Lanka | Average Score : "+averageSri);
-    console.log("Winner is team Sri Lanka | Average Score : "+averageSri);
+// Without return
+function addNumbers(num1, num2){
+    var ans = num1 + num2;
+    console.log("Additon : "+ans);
 }
-else if(averageSri < averageEng){
-    alert("Winner is team England | Average Score : "+averageEng);
-    console.log("Winner is team England | Average Score : "+averageEng);
+
+// With return
+function subNumbers(num1, num2){
+    // Returns the value to where we called the function
+    // Exit the function
+    return num1 - num2;
 }
-else{
-    alert("Match drawn, average scores are equal!");
-    console.log("Match drawn, average scores are equal!");
+
+// Calling functions
+addNumbers(20, 32.5);
+
+var sub = subNumbers(30, 12);
+console.log("Substraction :"+sub);
+
+// ----------------------------------
+
+// Define
+function calculateAge(birthYear){
+    return 2021 - birthYear;
 }
+
+// Calling
+console.log("Kasun is "+calculateAge(1996)+" years old.");
+console.log("Priyan is "+calculateAge(2000)+" years old.");
+
+// Define
+function retiringYear(firstName, birthYear){
+    // Calling
+    var age = calculateAge(birthYear);
+    var retire = 60 - age;
+    console.log(firstName+" retires in "+retire+" years, in "+(birthYear+age+retire));
+}
+
+// Calling
+retiringYear("Namal", 1990);
