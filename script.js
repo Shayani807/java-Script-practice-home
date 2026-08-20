@@ -1,44 +1,48 @@
-// ---------------------
-// --------Arrays-------
-// ---------------------
+// -----------------------------
+// --------Tip Calculator-------
+// -----------------------------
 
 /*
-    In JavaScript, array is a single variable that is used to store different elements. It is often used when we want to store list of elements and access them by a single variable.
+    Dasun and his freinds went on a picnic. To get food they went to 3 different restaurants for each meal. The bills are Rs. 1230, Rs. 982, Rs. 1640.
+
+    To tip the waiter a fair amount, Dasun created a simple tip calculator (as a function). He likes to tip 20% of the bill when the bill is less than Rs. 1000, 15% when the bill is between Rs. 1000 and Rs. 1500, and 10% if the bill is more than Rs. 1500.
+
+    In the end, Dasun would like to have 2 arrays:
+    1. Containing all 3 tips
+    2. Containing all three final paid amounts (bill + tip)
 */
 
-// Ways to define an array
-var students = ['Ruwan', 'Namal', 'Piyal', 'Kasuni', 'Danushka'];
-var marks = new Array(60,55,66,44,78);
+var tips = new Array();
+var amount = new Array();
 
-// Print array
-console.log(students);
-console.log(students.length);
-console.log(students[3]+' got '+marks[3]+' marks for Maths.');
+// Function
+function tipCalculator(bill){
+    var tip;
+    if(bill < 1000){
+        // Calculate
+        tip = bill * (20 / 100);
+    }
+    else if(bill >= 1000 && bill < 1500){
+        // Calculate
+        tip = bill * (15 / 100);
+    }
+    else{
+        // Calculate
+        tip = bill * (10 / 100);
+    }
 
-// Array mutation
-students[3] = 'Sanduni';
-students[5] = 'Thilini';
-students[students.length] = 'Chamara';
-console.log(students);
+    // Store in array
+    tips.push(tip);
+    amount.push(bill+tip);
 
-// Different data types in an array
-var std1 = ['Kamal', 'Perera', 22, 'Civil', 'Panadura', true];
-console.log(std1);
+    return tip;
+}
 
-// Add elements
-std1.push('green');
-std1.unshift('Mr.');
-console.log(std1);
+// Calling
+console.log('1 - Tip : '+tipCalculator(1230));
+console.log('2 - Tip : '+tipCalculator(982));
+console.log('3 - Tip : '+tipCalculator(1640));
 
-// Remove elements
-std1.pop();
-std1.pop();
-std1.shift();
-console.log(std1);
-
-// Get index of an element
-console.log(std1.indexOf(22));
-
-var isAgriStudent = std1.indexOf('Agri') === -1 ? std1[0]+' is not a Agri student' : std1[0]+' is a Civil student';
-
-console.log(isAgriStudent);
+// Arrays
+console.log(tips);
+console.log(amount);
