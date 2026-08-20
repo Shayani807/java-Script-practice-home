@@ -1,48 +1,71 @@
-// -----------------------------
-// --------Tip Calculator-------
-// -----------------------------
+// ----------------------
+// --------Objects-------
+// ----------------------
 
 /*
-    Dasun and his freinds went on a picnic. To get food they went to 3 different restaurants for each meal. The bills are Rs. 1230, Rs. 982, Rs. 1640.
-
-    To tip the waiter a fair amount, Dasun created a simple tip calculator (as a function). He likes to tip 20% of the bill when the bill is less than Rs. 1000, 15% when the bill is between Rs. 1000 and Rs. 1500, and 10% if the bill is more than Rs. 1500.
-
-    In the end, Dasun would like to have 2 arrays:
-    1. Containing all 3 tips
-    2. Containing all three final paid amounts (bill + tip)
+    In Javascript objects are variables that has many values.
+    Those values written as name:value pairs called properties or methods.
 */
 
-var tips = new Array();
-var amount = new Array();
-
-// Function
-function tipCalculator(bill){
-    var tip;
-    if(bill < 1000){
-        // Calculate
-        tip = bill * (20 / 100);
+// --Object Literals--
+// Comma-separated list of name-value pairs wrapped in curly braces.
+var nimal = {
+    firstName: 'Nimal',
+    lastName: 'Perera',
+    age: 24,
+    isMarried: false,
+    job: 'Developer',
+    subjects: ['Java Programming', 'Web Development', 'Graphic Design', 'Database Management'],
+    degree: {
+        name: 'Software Eng.',
+        duration: '4 years',
+        credits: 120
+    },
+    projects: [
+        {
+            name: 'Ecomerce App',
+            technology: 'Flutter',
+            version: 1.1
+        },
+        {
+            name: 'Music Player',
+            technology: 'Java',
+            version: 1.2
+        },
+        {
+            name: 'POS',
+            technology: 'C#',
+            version: 2.0
+        }
+    ],
+    yearOfBirth: function(year){
+        return year-this.age;
     }
-    else if(bill >= 1000 && bill < 1500){
-        // Calculate
-        tip = bill * (15 / 100);
-    }
-    else{
-        // Calculate
-        tip = bill * (10 / 100);
-    }
-
-    // Store in array
-    tips.push(tip);
-    amount.push(bill+tip);
-
-    return tip;
 }
 
-// Calling
-console.log('1 - Tip : '+tipCalculator(1230));
-console.log('2 - Tip : '+tipCalculator(982));
-console.log('3 - Tip : '+tipCalculator(1640));
+// Get values
+console.log(nimal);
+console.log(nimal.firstName);
+console.log(nimal['lastName']);
+var x = 'age';
+console.log(nimal[x]);
+console.log(nimal.subjects[2]);
+console.log(nimal['subjects'][3]);
+console.log(nimal.degree.name);
+console.log(nimal['degree'].credits);
+console.log(nimal.projects[1].technology);
+console.log('Year of Birth : '+nimal.yearOfBirth(2021));
 
-// Arrays
-console.log(tips);
-console.log(amount);
+// Modify values
+nimal.job = 'Engineer';
+nimal['isMarried'] = true;
+console.log(nimal);
+
+// --new Object syntax--
+var kasun = new Object();
+// Add Properties
+kasun.firstName = 'Kasun';
+kasun.lastName = 'Fernando';
+kasun['age'] = 30;
+
+console.log(kasun);
