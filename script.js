@@ -1,46 +1,50 @@
-// -----------------------------
-// --------Error Handling-------
-// -----------------------------
+// ----------------------------------------------
+// -----------Introduction of Functions----------
+// ----------------------------------------------
 
-// --Try Catch--
 /*
-    try - Let you test a block of code for errors
-    catch - Lets you handle the error
-    throw -  lets you create custom errors
-    finally - lets you execute code, after try and catch, regardless of the result
+    Funtion is a re-usable peace of code that does a specific thing.
 */
 
-// Function to find the largest number
-function findLargest(a, b, c){
-    try{
-        if(typeof(a) !== 'number' || typeof(b) !== 'number' || typeof(c) !== 'number'){
-            throw "Error : Enter only numbers!";
-        }
-        else if(a == b || a == c || b == c){
-            throw "Error : Enter different numbers!";
-        }
-        else{
-            if(a > b && a > c){
-                console.log("a is the largest number!");
-            }
-            else if(b > a && b > c){
-                console.log("b is the largest number!");
-            }
-            else if(c > a && c > b){
-                console.log("c is the largest number!");
-            }
-            else{
-                console.log("Invalid inputs!");
-            }
-        }
-    }
-    catch(err){
-        console.log(err);
-    }
-    finally{
-        console.log("Input values are "+a+", "+b+" and "+c);
-    }
+// --Define functions--
+
+// Without return
+function addNumbers(num1, num2){
+    var ans = num1 + num2;
+    console.log("Additon : "+ans);
+}
+
+// With return
+function subNumbers(num1, num2){
+    // Returns the value to where we called the function
+    // Exit the function
+    return num1 - num2;
+}
+
+// Calling functions
+addNumbers(20, 32.5);
+
+var sub = subNumbers(30, 12);
+console.log("Substraction :"+sub);
+
+// ----------------------------------
+
+// Define
+function calculateAge(birthYear){
+    return 2021 - birthYear;
 }
 
 // Calling
-findLargest(7,7,5);
+console.log("Kasun is "+calculateAge(1996)+" years old.");
+console.log("Priyan is "+calculateAge(2000)+" years old.");
+
+// Define
+function retiringYear(firstName, birthYear){
+    // Calling
+    var age = calculateAge(birthYear);
+    var retire = 60 - age;
+    console.log(firstName+" retires in "+retire+" years, in "+(birthYear+age+retire));
+}
+
+// Calling
+retiringYear("Namal", 1990);
