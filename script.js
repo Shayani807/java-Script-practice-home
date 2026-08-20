@@ -1,49 +1,83 @@
-// -------------------------------
-// --------BMI with Objects-------
-// -------------------------------
+// --------------------
+// --------Loops-------
+// --------------------
 
 /*
-    Let's remember the first coding challenge where Kasun and Chamal compared their BMIs. Let's now implement the same functionality with objects and methods.
-    1. For each of them, create an object with full name, mass and height.
-    2. Then, add a method to each object to calculate the BMI. Save the BMI to the object and also return it from the method.
-    3. In the end, display the highest BMI with the full name. Don't forget they might have the same BMI.
-
-    BMI = mass / height ^ 2
+    loops are control structure that repeatedly run a block of code until a certain condition get false.
 */
 
-// Declare objects
-var kasun = new Object();
-var chamal = new Object();
+// --Whithout Loops--
+console.log(1);
+console.log(2);
+console.log(3);
 
-// Add properties to Kasun
-kasun.fullName = prompt("Enter Kasun's full name : ");
-kasun.mass = prompt("Enter Kasun's mass : ");
-kasun.height = prompt("Enter Kasun's height : ");
+// --For Loop--
+for(var i=0; i<10; i++){ // i += 1 => i = i + 1
+    console.log(i);
+}
+/*
+    i = 0, 0 < 10 true, log i to the console, i++
+    i = 1, 1 < 10 true, log i to the console, i++
+    ...
+    i = 9, 9 < 10 true, log i to the console, i++
+    i = 10, 10 < 10 false, exit the loop
+*/
 
-// Add properties to Chamal
-chamal.fullName = prompt("Enter Chamal,s full name : ");
-chamal.mass = prompt("Enter Chamal,s mass : ");
-chamal.height = prompt("Enter Chamal,s height : ");
-
-// Add bmi() method for both
-kasun.bmi = chamal.bmi = function(){
-    this.bmiVal = this.mass / (this.height**2);
-    return this.bmiVal;
+for(var i=10; i>0; i--){
+    console.log(i);
 }
 
-console.log(kasun);
-console.log(chamal);
-
-// Find the highest BMI
-if(kasun.bmi() > chamal.bmi()){
-    alert(kasun.fullName+" has the highest BMI "+kasun.bmiVal);
-}
-else if(kasun.bmi() < chamal.bmi()){
-    alert(chamal.fullName+" has the highest BMI "+chamal.bmiVal);
-}
-else{
-    alert("Both BMIs are equal!");
+// Iterate an array
+var students = ['Namal','Kumara','Dasun','Sachini','John'];
+for(var i = 0; i < students.length; i++){
+    console.log(students[i]);
 }
 
-console.log(kasun);
-console.log(chamal);
+// --For/In Loop--
+// The JavaScript for/in statement loops through the properties of an object
+var person = {fname:"Chamara", lname:"Silva", age:25};
+var i;
+for(i in person){
+    console.log(person[i]);
+}
+
+// --For/Of Loop--
+// For/of lets you loop over data structures that are iterable such as Arrays, Strings, Maps, NodeLists, and more.
+var fullName = 'Chamara Perera';
+var j;
+for(j of fullName){
+    console.log(j);
+}
+
+// --While Loop--
+var marks = [33,55,66,88,22];
+var k = 0;
+while(k < marks.length){
+    console.log(marks[k]);
+    k++;
+}
+
+// --Do-While Loop--
+var l = 10;
+do{
+    console.log(l);
+    l--;
+}while(l >= 1);
+
+// --Continue & Break--
+// The break and the continue statements are the only JavaScript statements that can "jump out of" a code block.
+var data = ['Saman','Galle',1996,'Maths',true,'Chocolate'];
+
+// Continue
+// If a specified condition occurs, and continues with the next iteration in the loop.
+for(var i = 0; i < data.length; i++){
+    if(typeof(data[i]) !== 'string') continue;
+    console.log(data[i]);
+}
+
+// Break
+// Breaks the loop and continues executing the code after the loop (if any)
+for(var i = 0; i < data.length; i++){
+    if(typeof(data[i]) !== 'string') break;
+    console.log(data[i]);
+}
